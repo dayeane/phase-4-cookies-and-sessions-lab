@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     session[:page_views] += 1
 
     if session[:page_views] > 3
-      render json: {error: "Maximum pageview limit reached" }, status: :401
+      render json: {error: "Maximum pageview limit reached" }, status: 401
     else
       render json: article, status: :ok
     end
